@@ -2,6 +2,201 @@
 	"version": "0.1.0",
 	"configurations": [
 		{
+			"name": "(gdb) Attach",
+			"type": "cppdbg",
+			"request": "attach",
+			"program": "enter program name, for example ${workspaceFolder}/a.exe",
+			"MIMode": "gdb",
+			"miDebuggerPath": "/path/to/gdb",
+			"setupCommands": [
+				{
+					"description": "Enable pretty-printing for gdb",
+					"text": "-enable-pretty-printing",
+					"ignoreFailures": true
+				},
+				{
+					"description": "Set Disassembly Flavor to Intel",
+					"text": "-gdb-set disassembly-flavor intel",
+					"ignoreFailures": true
+				}
+			]
+		},
+
+		{
+			"name": "(gdb) Bash on Windows Launch",
+			"type": "cppdbg",
+			"request": "launch",
+			"program": "enter program name, for example ${workspaceFolder}/a.exe",
+			"args": [],
+			"stopAtEntry": false,
+			"cwd": "${fileDirname}",
+			"environment": [],
+			"externalConsole": false,
+			"pipeTransport": {
+				"debuggerPath": "/usr/bin/gdb",
+				"pipeProgram": "${env:windir}\\system32\\bash.exe",
+				"pipeArgs": ["-c"],
+				"pipeCwd": ""
+			},
+			"setupCommands": [
+				{
+					"description": "Enable pretty-printing for gdb",
+					"text": "-enable-pretty-printing",
+					"ignoreFailures": true
+				},
+				{
+					"description": "Set Disassembly Flavor to Intel",
+					"text": "-gdb-set disassembly-flavor intel",
+					"ignoreFailures": true
+				}
+			]
+		},
+		{
+			"name": "(gdb) Bash on Windows Attach",
+			"type": "cppdbg",
+			"request": "attach",
+			"program": "enter program name, for example ${workspaceFolder}/a.exe",
+			"processId": "${command:pickRemoteProcess}",
+			"pipeTransport": {
+				"debuggerPath": "/usr/bin/gdb",
+				"pipeProgram": "${env:windir}\\system32\\bash.exe",
+				"pipeArgs": ["-c"],
+				"pipeCwd": ""
+			},
+			"setupCommands": [
+				{
+					"description": "Enable pretty-printing for gdb",
+					"text": "-enable-pretty-printing",
+					"ignoreFailures": true
+				},
+				{
+					"description": "Set Disassembly Flavor to Intel",
+					"text": "-gdb-set disassembly-flavor intel",
+					"ignoreFailures": true
+				}
+			]
+		},
+		{
+			"name": "(gdb) Attach",
+			"type": "cppdbg",
+			"request": "attach",
+			"program": "enter program name, for example ${workspaceFolder}/a.exe",
+			"MIMode": "gdb",
+			"miDebuggerPath": "/path/to/gdb",
+			"setupCommands": [
+				{
+					"description": "Enable pretty-printing for gdb",
+					"text": "-enable-pretty-printing",
+					"ignoreFailures": true
+				},
+				{
+					"description": "Set Disassembly Flavor to Intel",
+					"text": "-gdb-set disassembly-flavor intel",
+					"ignoreFailures": true
+				}
+			]
+		},
+		{
+			"name": "(gdb) Bash on Windows Attach",
+			"type": "cppdbg",
+			"request": "attach",
+			"program": "enter program name, for example ${workspaceFolder}/a.exe",
+			"processId": "${command:pickRemoteProcess}",
+			"pipeTransport": {
+				"debuggerPath": "/usr/bin/gdb",
+				"pipeProgram": "${env:windir}\\system32\\bash.exe",
+				"pipeArgs": ["-c"],
+				"pipeCwd": ""
+			},
+			"setupCommands": [
+				{
+					"description": "Enable pretty-printing for gdb",
+					"text": "-enable-pretty-printing",
+					"ignoreFailures": true
+				},
+				{
+					"description": "Set Disassembly Flavor to Intel",
+					"text": "-gdb-set disassembly-flavor intel",
+					"ignoreFailures": true
+				}
+			]
+		},
+		{
+			"name": "Default Configuration",
+			"type": "node",
+			"request": "launch",
+			"program": "${workspaceFolder}/app.js"
+		},
+		{
+			"name": "New Configuration",
+			"type": "node",
+			"request": "launch",
+			"program": "${workspaceFolder}/app.js"
+		},
+		{
+			"command": "npm start",
+			"name": "Run npm start",
+			"request": "launch",
+			"type": "node-terminal"
+		},
+		{
+			"type": "vscode-edge-devtools.debug",
+			"request": "launch",
+			"name": "Launch Microsoft Edge and open the Edge DevTools",
+			"url": "http://localhost:8080",
+			"webRoot": "${workspaceFolder}"
+		},
+		{
+			"type": "vscode-edge-devtools.debug",
+			"request": "attach",
+			"name": "Attach to Microsoft Edge and open the Edge DevTools",
+			"url": "http://localhost:8080",
+			"webRoot": "${workspaceFolder}"
+		},
+		{
+			"name": "Launch Edge",
+			"request": "launch",
+			"type": "msedge",
+			"url": "http://localhost:8080",
+			"webRoot": "${workspaceFolder}"
+		},
+		{
+			"name": "Attach to Edge",
+			"port": 9222,
+			"request": "attach",
+			"type": "msedge",
+			"webRoot": "${workspaceFolder}"
+		},
+		{
+			"type": "node",
+			"request": "launch",
+			"name": "CMake: Externally launched",
+			"cmakeDebugType": "external",
+			"pipeName": "<...>"
+		},
+		{
+			"type": "cmake",
+			"request": "launch",
+			"name": "CMake: Configure project",
+			"cmakeDebugType": "configure",
+			"clean": false,
+			"configureAll": false
+		},
+		{
+			"name": "Launch Chrome",
+			"request": "launch",
+			"type": "chrome",
+			"url": "http://localhost:8080",
+			"webRoot": "${workspaceFolder}"
+		},
+		{
+			"name": "Attach to Chrome",
+			"port": 9222,
+			"request": "attach",
+			"type": "chrome",
+			"webRoot": "${workspaceFolder}"
+		},
+		{
 			"type": "node",
 			"request": "launch",
 			"name": "Gulp Build",
@@ -149,7 +344,7 @@
 		{
 			"type": "extensionHost",
 			"request": "launch",
-			"name": "VS Code API Tests (single folder)",
+			"name": "VS Code API Tests (single folder) ",
 			"runtimeExecutable": "${execPath}",
 			"args": [
 				// "${workspaceFolder}", // Uncomment for running out of sources.
@@ -682,5 +877,8 @@
 			],
 			"preLaunchTask": "Ensure Prelaunch Dependencies"
 		},
-	]
+	],
+	"github.copilot.advanced": {
+		"authPermissions": ["read", "write"]
+	}
 }
